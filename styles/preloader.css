@@ -1,10 +1,15 @@
 .preloader {
-  position: absolute;
-  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  inline-size: 100%;
+  block-size: 100%;
+  min-block-size: inherit;
   background: #545050;
+}
+
+.result__video-container .preloader {
+  grid-area: 1 / 1;
 }
 
 .preloader-chasing-squares {

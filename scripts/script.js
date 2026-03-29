@@ -199,14 +199,13 @@ function serializeFormData(form) {
 // Генерирует строку с фильтрами запросов в API в зависимости от данных из формы ✅
 function generateFilterRequest(endpoint, city, timeArray) {
   if (city) {
-    endpoint += `filters[city][$containsi]=${city}&`;
+    endpoint += `filters[city][$containsi]=${encodeURIComponent(city)}&`;
   }
-  if (timeArray) {
-    timeArray.forEach((timeslot) => {
-      endpoint += `filters[time_of_day][$eqi]=${timeslot}&`;
+  if (timeArray.length) {
+    timeArray.forEach((timeslot, index) => {
+      endpoint += `filters[time_of_day][$in][${index}]=${timeslot}&`;
     });
   }
-  console.log('Сгенерировал строку адреса запроса в API из данных формы');
   return endpoint;
 }
 

@@ -1,10 +1,14 @@
 .error {
-  position: absolute;
-  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: #545050;
+}
+
+.result__video-container .error {
+  grid-area: 1 / 1;
 }
 
 .error__title {

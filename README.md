@@ -1,0 +1,1 @@
+git@github.com:teIIen/posmotri-v-okno-ad.git
